@@ -19,21 +19,22 @@ public class PolleriaMariosApplication {
         SpringApplication.run(PolleriaMariosApplication.class, args);
     }
 
+    /*
     @Bean
     CommandLineRunner crearUsuarioInicial(UsuarioRepository usuarioRepository,
                                           RolRepository rolRepository,
                                           PasswordEncoder passwordEncoder) {
         return args -> {
-            // Revisar si el rol ADMIN existe, si no crearlo
+
             Rol rolAdmin = rolRepository.findByNombre("ADMIN")
                     .orElseGet(() -> rolRepository.save(new Rol(null, "ADMIN")));
 
-            // Revisar si el usuario ya existe
+
             if (usuarioRepository.findByEmail("admin@polleria.com").isEmpty()) {
                 Usuario admin = new Usuario();
                 admin.setNombre("Administrador");
                 admin.setEmail("admin@polleria.com");
-                admin.setPassword(passwordEncoder.encode("admin123")); // 🔒 Contraseña encriptada
+                admin.setPassword(passwordEncoder.encode("admin123"));
                 admin.setRol(rolAdmin);
                 admin.setActivo(true);
                 admin.setFechaCreacion(LocalDateTime.now());
@@ -44,4 +45,5 @@ public class PolleriaMariosApplication {
             }
         };
     }
+    */
 }
